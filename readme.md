@@ -2,7 +2,7 @@
 -------------------------------
 
 1. 使用 `changed` 判断文件是否有修改  
-2. 使用 `browser-sync` 修改自动刷新页面  
+2. 使用 `browser-sync` 自动刷新页面  
 3. `gulp server` 默认打开所有监听  
 4. 默认首页是 `dist/index.html` ，若要修改，直接 `ctrl+f` 搜索 `baseDir`  
 
