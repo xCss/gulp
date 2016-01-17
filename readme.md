@@ -43,4 +43,4 @@ gulp clean              //清空 dist/ 目录
 
 
 ###已知 BUG  
-- [ ] `gulp-rev-append` 不工作
+- [ ] `gulp-rev-append` 偶尔不工作

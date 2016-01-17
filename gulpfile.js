@@ -55,8 +55,8 @@ gulp.task('server',['css','js','images','less','sass','copy','watch'],function()
 gulp.task('build',['js','css','copy','less','sass']);
 
 gulp.task('clean',function(){
-    gulp.src('../gulp/dist',{read:false}).pipe(clean({force:true}));
-    gulp.src('../gulp/.sass-cache',{read:false}).pipe(clean({force:true}));
+    gulp.src('./dist',{read:false}).pipe(clean({force:true}));
+    gulp.src('./.sass-cache',{read:false}).pipe(clean({force:true}));
 });
 
 //压缩js，并输出到dist
