@@ -23,7 +23,25 @@
 
 然后，就可以访问 `localhost:3000` 查看网页了  
   
+##目录结构  
+```
+src             #源码目录
+  |--js
+  |--css
+  |--less
+  |--sass
+  |--fonts
+  |--images
+  |--index.html
 
+dist            #源码目录
+  |--js
+  |--css
+  |--fonts
+  |--images
+  |--index.html
+
+```
 
 
 ##所有命令
