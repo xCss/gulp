@@ -47,7 +47,7 @@ gulp s                  //单独打开服务，不执行任何[编译/压缩/监
 
 
 ###已知 BUG  
-- [ ] `gulp-rev-append` 偶尔不工作
+- [ ] `gulp-rev-append` 在\<head\>中偶尔不工作
 
 ## example  
 1. [Demo](http://eary.github.io/gulp)  
