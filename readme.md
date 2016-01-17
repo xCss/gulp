@@ -1,4 +1,4 @@
-# Gulp + Browser-sync 
+# Gulp + Browser-sync 自动化工程构建工具
 
 1. 使用 `changed` 检测文件是否有修改  
 2. 使用 `browser-sync` 自动刷新页面  
