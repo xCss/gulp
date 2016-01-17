@@ -68,5 +68,5 @@ gulp s                  //单独打开服务，不执行任何[编译/压缩/监
 - [ ] `gulp-rev-append` 在\<head\>中偶尔不工作
 
 ## 以下项目是采用此工具构建  
-1. [Demo](http://eary.github.io/gulp)  
-2. [Treasure](http://eary.github.io/treasure)  
+1. [Demo](dist/index.html)  
+2. [Treasure](https://github.com/eary/treasure)  
