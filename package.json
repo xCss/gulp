@@ -1,28 +1,45 @@
 {
-  "name": "webapp",
-  "version": "0.0.1",
-  "description": "something...",
+  "name": "gulp",
+  "version": "1.0.0",
+  "description": "gulp",
   "main": "gulpfile.js",
   "scripts": {
     "test": "gulp test"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eary/gulp.git"
+    "url": "git+https://github.com/Eary/gulp.git"
   },
   "keywords": [
     "gulp"
   ],
   "author": "eary",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/eary/gulp/issues"
+    "url": "https://github.com/Eary/gulp/issues"
   },
-  "homepage": "https://github.com/eary/gulp#readme",
-  "readme": "https://github.com/eary/gulp#readme",
+  "readme": "./readme.md",
+  "homepage": "https://github.com/Eary/gulp#readme",
   "devDependencies": {
+    "browser-sync": "^2.11.0",
     "gulp": "^3.9.0",
-    "gulp-minify-css": "^1.2.2",
-    "gulp-uglify": "^1.5.1"
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-changed": "^1.3.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-filter": "^3.0.1",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-jscs": "^3.0.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-minify-css": "^1.2.3",
+    "gulp-rename": "^1.2.2",
+    "gulp-ruby-sass": "^2.0.6",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.1",
+    "gulp-util": "^3.0.7",
+    "gulp-watch-path": "^0.1.0",
+    "jshint": "^2.9.1",
+    "stream-combiner2": "^1.1.1"
   }
 }
