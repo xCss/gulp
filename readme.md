@@ -13,7 +13,7 @@
 > gulp server
 
 然后，就可以访问 `localhost:3000` 查看网页了  
-  默认首页是 `[dist/index.html](dist/index.html)`
+  
 
 
 
@@ -37,5 +37,7 @@ gulp clean              //清空 dist/ 目录
 ```
 
 -------------------------------
-1.使用 `changed` 判断文件是否有修改
-2.使用 `browser-sync` 修改自动刷新页面
+1. 使用 `changed` 判断文件是否有修改  
+2. 使用 `browser-sync` 修改自动刷新页面  
+3. `gulp server` 默认打开所有监听  
+4. 默认首页是 `dist/index.html` ，若要修改，直接 `ctrl+f` 搜索 `baseDir`  
