@@ -36,7 +36,8 @@ gulp sass               //编译并压缩 sass 文件，输出到 dist/css/
 gulp images             //压缩图片，输出到 dist/images/
 gulp copy               //复制 *.html 和字体文件到 dist/
 gulp test               //这个不用说
-gulp server             //启动服务，并监听所有文件改变
+gulp server             //启动服务，并监听所有文件
+gulp watch              //监听所有文件
 gulp build              //编译 src/ 目录下的所有文件并输出到 dist/ 目录，不启动监听
 gulp reload             //强制刷新页面
 gulp clean              //清空 dist/ 目录
