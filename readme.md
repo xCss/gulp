@@ -50,5 +50,5 @@ gulp s                  //单独打开服务，不执行任何[编译/压缩/监
 - [ ] `gulp-rev-append` 偶尔不工作
 
 ## example  
-[test](http://eary.github.io/gulp)  
-[treasure](http://eary.github.io/treasure)  
+1. [Demo](http://eary.github.io/gulp)  
+2. [Treasure](http://eary.github.io/treasure)  
