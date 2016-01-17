@@ -5,7 +5,7 @@
 3. `gulp server` 默认打开所有监听  
 4. 默认首页是 `dist/index.html` ，若要修改，请直接修改变量 `basePath` 
 5. 使用 `gulp-rev-append` 添加版本号  
-    `!!注:` 请在html文档中要添加版本号的地方加上`?rev=@@hash` [查看例子 → 右键源码](http://eary.github.io/gulp)  
+    `!!注:` 请在html文档中要添加版本号的地方加上`?rev=@@hash`  
 
 -------------------------------  
 
@@ -48,3 +48,7 @@ gulp s                  //单独打开服务，不执行任何[编译/压缩/监
 
 ###已知 BUG  
 - [ ] `gulp-rev-append` 偶尔不工作
+
+## example  
+[test](http://eary.github.io/gulp)  
+[treasure](http://eary.github.io/treasure)  
