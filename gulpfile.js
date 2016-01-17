@@ -28,13 +28,11 @@ var jsDistPath = 'dist/js/';
 var cssSrcPath = 'src/css/**/*.css';
 var cssDistPath = 'dist/css/';
 var lessSrcPath = 'src/less/**/*.less';
-var lessDistPath = 'dist/css/';
 var sassSrcPath = 'src/sass/**/*.*';
-var sassDistPath = 'dist/css/';
 var imagesSrcPath = 'src/images/**/*.*';
 var imagesDistPath = 'dist/images/';
 var fontsSrcPath = 'src/fonts/**/*.*';
-var fontsDistPath = 'dist/font/';
+var fontsDistPath = 'dist/fonts/';
 var htmlSrcPath = 'src/**/*.html';
 var htmlDistPath = 'dist/';
     
@@ -88,15 +86,15 @@ gulp.task('css',function(){
 //编译less
 gulp.task('less',function(){
     return gulp.src(lessSrcPath)
-        .pipe(changed(lessDistPath))
+        .pipe(changed(cssDistPath))
         .pipe(autoprefixer({
             browsers: ['last 2 version', 'ie 8', 'ie 9']
         }))
         .pipe(less())
-        .pipe(gulp.dest(lessDistPath))
+        .pipe(gulp.dest(cssDistPath))
         .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss())
-        .pipe(gulp.dest(lessDistPath))
+        .pipe(gulp.dest(cssDistPath))
         .pipe(breload({stream:true}));
 });
 
@@ -109,10 +107,10 @@ gulp.task('sass',function(){
         .pipe(autoprefixer({
           browsers: ['last 2 version', 'ie 8', 'ie 9']
         }))
-        .pipe(gulp.dest(sassDistPath))
+        .pipe(gulp.dest(cssDistPath))
         .pipe(rename({ suffix: '.min' }))
         .pipe(minifycss())
-        .pipe(gulp.dest(sassDistPath))
+        .pipe(gulp.dest(cssDistPath))
         .pipe(breload({stream:true}));
 });
 
@@ -150,4 +148,7 @@ gulp.task('watch',function(){
 });
 
 gulp.task('default',['server']);
+
+
+
 
