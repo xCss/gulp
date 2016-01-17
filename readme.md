@@ -33,14 +33,12 @@ src             #源码目录
   |--fonts
   |--images
   |--index.html
-
 dist            #源码目录
   |--js
   |--css
   |--fonts
   |--images
   |--index.html
-
 ```
 
 
