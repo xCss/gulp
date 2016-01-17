@@ -5,7 +5,7 @@
 3. `gulp server` 默认打开所有监听  
 4. 默认首页是 `dist/index.html` ，若要修改，请直接修改变量 `basePath` 
 5. 使用 `gulp-rev-append` 添加版本号  
-    `!!注:` 请在html文档中要添加版本号的地方加上`?rev=@@hash`
+    `!!注:` 请在html文档中要添加版本号的地方加上`?rev=@@hash`  
 
 -------------------------------  
 
@@ -40,6 +40,7 @@ gulp server             //启动服务，并监听所有文件改变
 gulp build              //编译 src/ 目录下的所有文件并输出到 dist/ 目录，不启动监听
 gulp reload             //强制刷新页面
 gulp clean              //清空 dist/ 目录
+gulp s                  //单独打开服务，不执行任何[编译/压缩/监听]操作(此命令在[编译/压缩]完成之后)
 ```
 
 

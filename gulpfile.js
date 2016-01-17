@@ -41,6 +41,18 @@ gulp.task('test',function(){
     console.log('Tt works!');
 });
 
+//单独打开服务，不执行任何编译/压缩/监听操作(此操作在编译/压缩完成之后)
+gulp.task('s',function(){
+    browserSync({
+        files:"**",
+        server:{
+            baseDir:basePath
+        }
+    });
+});
+
+gulp.task('default',['server']);
+
 gulp.task('server',['css','js','images','less','sass','copy','watch'],function(){
     browserSync({
         files:"**",
@@ -50,7 +62,8 @@ gulp.task('server',['css','js','images','less','sass','copy','watch'],function()
     });
 });
 
-gulp.task('build',['js','css','copy','less','sass']);
+
+gulp.task('build',['js','css','images','copy','less','sass']);
 
 gulp.task('clean',function(){
     gulp.src('./dist',{read:false}).pipe(clean({force:true}));
@@ -117,7 +130,13 @@ gulp.task('sass',function(){
 //压缩图片，并输出到dist
 gulp.task('images',function(){
     return gulp.src(imagesSrcPath)
-        .pipe(cache(imagemin({optimizationLevel:3,progressive:true,interlaced:true})))
+        //.pipe(cache(imagemin({optimizationLevel:3,progressive:true,interlaced:true})))
+        .pipe(imagemin({
+            optimizationLevel: 3, //类型：Number  默认：3  取值范围：0-7（优化等级）
+            progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片
+            interlaced: true, //类型：Boolean 默认：false 隔行扫描gif进行渲染
+            multipass: true //类型：Boolean 默认：false 多次优化svg直到完全优化
+        }))
         .pipe(gulp.dest(imagesDistPath));
 });
 
@@ -147,7 +166,6 @@ gulp.task('watch',function(){
     gulp.watch([fontsSrcPath,htmlSrcPath],['copy','reload']);
 });
 
-gulp.task('default',['server']);
 
 
 
