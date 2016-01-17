@@ -4,7 +4,7 @@
 2. 使用 `browser-sync` 自动刷新页面  
 3. `gulp server` 默认打开所有监听  
 4. 默认首页是 `dist/index.html` ，若要修改，请直接修改变量 `basePath` 
-5. 使用 `gulp-rev-append` 添加版本号 
+5. 使用 `gulp-rev-append` 添加版本号  
     !!注: 请在html文档中要添加版本好的地方加上`?rev=@@hash`
 
 -------------------------------  
