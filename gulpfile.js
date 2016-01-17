@@ -21,7 +21,7 @@ gulp.task('test',function(){
     console.log('Tt works!');
 });
 
-gulp.task('server',['watchjs','watchcss','watchcopy'],function(){
+gulp.task('server',['watchjs','watchcss','watchless','watchsass','watchcopy'],function(){
     browserSync({
         files:"**",
         server:{
@@ -32,7 +32,7 @@ gulp.task('server',['watchjs','watchcss','watchcopy'],function(){
 
 gulp.task('clean',function(){
     return gulp.src('dist/**/*',{read:false})
-    .pipe(clean({force:true}));
+        .pipe(clean({force:true}));
 });
 
 //压缩js，并输出到dist
@@ -82,6 +82,7 @@ gulp.task('less',function(){
     var srcPath = 'src/less/**/*.less',
         distPath = 'dist/css';
     return gulp.src(srcPath)
+        .pipe(changed(distPath))
         .pipe(autoprefixer({
             browsers: ['last 2 version', 'ie 8', 'ie 9']
         }))
@@ -101,8 +102,11 @@ gulp.task('watchless',['less'],function(){
 gulp.task('sass',function(){
     var srcPath = 'src/sass/**/*.*',
         distPath = 'dist/css';
-    return gulp.src(srcPath)
-        .pipe(sass({sourcemap: true}))
+    return sass(srcPath)
+        .on('error', function (err) {
+            console.error('Error!', err.message);
+        })
+        .pipe(changed(distPath))
         .pipe(autoprefixer({
           browsers: ['last 2 version', 'ie 8', 'ie 9']
         }))
