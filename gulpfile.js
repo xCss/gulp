@@ -19,8 +19,8 @@ var autoprefixer = require('gulp-autoprefixer');
 
 var breload = browserSync.reload;
 /**
- * 所有链接
- * @type {String}
+ * 所有目录
+ * @basePath browser-sync服务器默认目录
  */
 var basePath = './dist';
 var jsSrcPath = 'src/js/**/*.js';
@@ -33,7 +33,7 @@ var imagesSrcPath = 'src/images/**/*.*';
 var imagesDistPath = 'dist/images/';
 var fontsSrcPath = 'src/fonts/**/*.*';
 var fontsDistPath = 'dist/fonts/';
-var htmlSrcPath = 'src/**/*.html';
+var htmlSrcPath = 'src/**/*.*';
 var htmlDistPath = 'dist/';
     
 
