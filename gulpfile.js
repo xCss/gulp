@@ -63,7 +63,7 @@ gulp.task('server',['css','js','images','less','sass','copy','watch'],function()
 });
 
 
-gulp.task('build',['js','css','images','copy','less','sass']);
+gulp.task('build',['js','css','images','less','sass','copy']);
 
 gulp.task('clean',function(){
     gulp.src('./dist',{read:false}).pipe(clean({force:true}));
