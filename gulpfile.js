@@ -55,6 +55,14 @@ gulp.task('css',function(){
         .pipe(gulp.dest('./rev/css')); 
 });
 
+gulp.task('images',function(){
+    return gulp.src(srcPath + '/images/*.*')
+        .pipe(rev())
+        .pipe(gulp.dest(distPath))
+        .pipe(rev.manifest())
+        .pipe(gulp.dest('./rev/images'));
+});
+
 
 gulp.task('rev',function(){
     return gulp.src([revPath, srcPath + '/**/*.html'])
@@ -93,15 +101,15 @@ gulp.task('server',['build'],function(){
 
 gulp.task('default',['server']);
 
-gulp.test('build',['clean','js','css','rev','copy']);
+gulp.task('build',['clean','js','css','images','rev','copy']);
 
 
 
 
-//复制字体和图片文件
+//复制字体
 gulp.task('copy',function(){
-    gulp.src([srcPath + '/fonts/**', srcPath + '/images/**'])
-        .pipe(gulp.dest(distPath));
+    return gulp.src(srcPath + '/fonts/**')
+        .pipe(gulp.dest(distPath + '/fonts/'));
 });
 
 
