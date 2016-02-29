@@ -1,1 +1,123 @@
-body{color:#838b75;}
+.vertical
+{
+width:50px;
+height:50px;
+
+background:red;
+margin:50px auto;
+position:relative;
+}
+.vertical:hover{
+    animation:vertical .5s 2;
+    -webkit-animation:vertical .5s 2; /*Safari and Chrome*/
+}
+.level{
+width:50px;
+height:50px;
+background:grey;
+margin:0 auto;
+position:relative;
+}
+.level:hover{
+animation:level .5s 2;
+-webkit-animation:level .5s 2; /*Safari and Chrome*/}
+/*水平*/
+@keyframes level
+{
+    0% {left:0px;}
+    5%{left:-5px;}
+    10%{left:-10px;}
+    15%{left:-15px;}
+    20%{left:-20px;}
+    25%{left:-25px;}
+    30%{left:-20px;}
+    35%{left:-15px;}
+    40%{left:-10px;}
+    45%{left:-5px;}
+    50%{left:0px;}
+    55%{left:5px;}
+    60%{left:10px;}
+    65%{left:15px;}
+    70%{left:20px;}
+    75%{left:25px;}
+    80%{left:20px;}
+    85%{left:15px;}
+    90%{left:10px;}
+    95%{left:5px;}
+    100% {left:0px;}
+}
+
+@-webkit-keyframes level /*Safari and Chrome*/
+{
+    0% {left:0px;}
+    5%{left:-5px;}
+    10%{left:-10px;}
+    15%{left:-15px;}
+    20%{left:-20px;}
+    25%{left:-25px;}
+    30%{left:-20px;}
+    35%{left:-15px;}
+    40%{left:-10px;}
+    45%{left:-5px;}
+    50%{left:0px;}
+    55%{left:5px;}
+    60%{left:10px;}
+    65%{left:15px;}
+    70%{left:20px;}
+    75%{left:25px;}
+    80%{left:20px;}
+    85%{left:15px;}
+    90%{left:10px;}
+    95%{left:5px;}
+    100% {left:0px;}
+}
+
+/*垂直*/
+@keyframes vertical
+{
+    0% {top:0px;}
+    5%{top:-5px;}
+    10%{top:-10px;}
+    15%{top:-15px;}
+    20%{top:-20px;}
+    25%{top:-25px;}
+    30%{top:-20px;}
+    35%{top:-15px;}
+    40%{top:-10px;}
+    45%{top:-5px;}
+    50%{top:0px;}
+    55%{top:5px;}
+    60%{top:10px;}
+    65%{top:15px;}
+    70%{top:20px;}
+    75%{top:25px;}
+    80%{top:20px;}
+    85%{top:15px;}
+    90%{top:10px;}
+    95%{top:5px;}
+    100% {top:0px;}
+}
+@-webkit-keyframes vertical
+{
+    0% {top:0px;}
+    5%{top:-5px;}
+    10%{top:-10px;}
+    15%{top:-15px;}
+    20%{top:-20px;}
+    25%{top:-25px;}
+    30%{top:-20px;}
+    35%{top:-15px;}
+    40%{top:-10px;}
+    45%{top:-5px;}
+    50%{top:0px;}
+    55%{top:5px;}
+    60%{top:10px;}
+    65%{top:15px;}
+    70%{top:20px;}
+    75%{top:25px;}
+    80%{top:20px;}
+    85%{top:15px;}
+    90%{top:10px;}
+    95%{top:5px;}
+    100% {top:0px;}
+}
