@@ -58,7 +58,7 @@ gulp.task('css',function(){
 gulp.task('images',function(){
     return gulp.src(srcPath + '/images/*.*')
         .pipe(rev())
-        .pipe(gulp.dest(distPath))
+        .pipe(gulp.dest(distPath + '/images/'))
         .pipe(rev.manifest())
         .pipe(gulp.dest('./rev/images'));
 });
