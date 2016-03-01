@@ -1,7 +1,7 @@
 # Gulp + Browser-sync 自动化工程构建工具
 
 1. 使用 `browser-sync` 自动刷新页面  
-2. `gulp server` 默认打开所有监听  
+2. `gulp watch` 默认打开所有监听  
 3. 默认首页是 `dist/index.html` ，若要修改，请直接修改变量 `basePath` 
 4. 使用 `gulp-rev-collector` 添加版本号  
 
