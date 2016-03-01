@@ -17,7 +17,7 @@
 > npm install
 
 ### 4.启动服务
-> gulp server
+> gulp watch
 
 然后，就可以访问 `localhost:3000` 查看网页了  
   
@@ -40,16 +40,16 @@ dist            #输出目录
 
 ## 所有命令
 ```
-gulp                    //默认调用 gulp server
+gulp                    //默认调用 gulp build
 gulp js                 //压缩 js 文件，并输出到 dist/js/
 gulp css                //压缩 css 文件，并输出到 dist/css/
-gulp images             //复制图片，并输出到 dist/images/
+gulp images             //复制并压缩图片，并输出到 dist/images/
 gulp copy               //复制字体文件到 dist/
-gulp server             //启动服务，并监听所有文件
-gulp watch              //监听所有文件
+gulp watch              //监听所有文件，并启动服务
 gulp build              //编译 src/ 目录下的所有文件并输出到 dist/ 目录，不启动监听
 gulp reload             //强制刷新页面
 gulp clean              //清空 dist/ 目录
+gulp rev                //添加MD5指纹
 ```
 
 

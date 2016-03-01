@@ -1,18 +1,21 @@
 var gulp = require('gulp'),                         //gulp
+    del = require('del'),                           //删除文件
+    rev = require('gulp-rev'),                      //更改版本名
     csso = require('gulp-csso'),                    //css压缩
+    clean = require('gulp-clean'),                  //清空文件夹
+    filter = require('gulp-filter'),                //过滤筛选指定文件
+    concat = require('gulp-concat'),                //合并文件
+    cached = require('gulp-cached'),                //缓存当前任务中的文件，只让已修改的文件通过管道
     jshint = require('gulp-jshint'),                //js检查
     uglify = require('gulp-uglify'),                //js压缩
     concat = require('gulp-concat'),                //文件合并
-    clean = require('gulp-clean'),                  //清空文件夹
     rename = require('gulp-rename'),                //文件重命名
-    rev = require('gulp-rev'),                      //更改版本名
+    imagemin = require('gulp-imagemin'),            //图片压缩
+    browserSync = require('browser-sync'),          //自动刷新
+    autoprefixer = require('gulp-autoprefixer'),    //添加浏览器私有前缀
     revCollector = require('gulp-rev-collector');   //gulp-rev的插件，用于更改html里的资源引用路径
-
-
-
-var browserSync = require('browser-sync');
-//var minifycss = require('gulp-minify-css');
-var autoprefixer = require('gulp-autoprefixer');
+    
+    
 
 var breload = browserSync.reload;
 /**
@@ -45,7 +48,7 @@ gulp.task('js',function(){
 gulp.task('css',function(){
     return gulp.src(srcPath+'/**/*.css')
         .pipe(autoprefixer({
-            browsers: ['last 2 version', 'ie 8', 'ie 9']
+            browsers: ['last 5 version', 'ie 8', 'ie 9']
         }))
         .pipe(csso())
         .pipe(rename({suffix:'.min'}))
@@ -57,6 +60,13 @@ gulp.task('css',function(){
 
 gulp.task('images',function(){
     return gulp.src(srcPath + '/images/*.*')
+        .pipe(cached('images'))
+        .pipe(imagemin({
+            optimizationLevel: 3,   // 取值范围：0-7（优化等级）
+            progressive: true,      // 是否无损压缩jpg图片
+            interlaced: true,       // 是否隔行扫描gif进行渲染
+            multipass: true         // 是否多次优化svg直到完全优化
+        }))
         .pipe(rev())
         .pipe(gulp.dest(distPath + '/images/'))
         .pipe(rev.manifest())
@@ -72,13 +82,31 @@ gulp.task('rev',function(){
         .pipe(gulp.dest(distPath));
 });
 
-
-    
-
-gulp.task('test',function(){
-    console.log('Tt works!');
+gulp.task('build',['js','css','images','copy'],function(){
+    gulp.start('rev');
 });
 
+gulp.task('default',['clean'],function(){
+    gulp.start('build');
+});
+
+gulp.task('watch',function(){
+    
+    gulp.watch(srcPath + '/images/*',['images']);
+    gulp.watch(srcPath + '/**/*.html',['rev'],breload);
+    gulp.watch(srcPath + '/**/*.js',['js','rev'],breload);
+    gulp.watch(srcPath + '/**/*.css',['css','rev'],breload);
+    
+    browserSync({
+        files:'**',
+        server:{
+            baseDir:basePath    // 在 dist 目录下启动本地服务器环境，自动启动默认浏览器
+        }
+    });
+    
+});
+
+    
 //单独打开服务
 gulp.task('s',function(){
     browserSync({
@@ -88,23 +116,6 @@ gulp.task('s',function(){
         }
     });
 });
-
-
-gulp.task('server',['build'],function(){
-    browserSync({
-        files:"**",
-        server:{
-            baseDir:basePath
-        }
-    });
-});
-
-gulp.task('default',['server']);
-
-gulp.task('build',['clean','js','css','images','rev','copy']);
-
-
-
 
 //复制字体
 gulp.task('copy',function(){
@@ -117,15 +128,8 @@ gulp.task('copy',function(){
 gulp.task('reload',function(){
     breload();
 });
-//监听
-// gulp.task('watch',function(){
-//     gulp.watch(jsSrcPath,['js','reload']);
-//     gulp.watch(cssSrcPath,['css']);
-//     gulp.watch(lessSrcPath,['less']);
-//     gulp.watch(sassSrcPath,['sass']);
-//     gulp.watch(imagesSrcPath,['images']);
-//     gulp.watch([fontsSrcPath,htmlSrcPath],['copy','reload']);
-// });
+
+
 
 
 
