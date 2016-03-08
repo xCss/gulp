@@ -41,6 +41,7 @@ dist            #输出目录
 ## 所有命令
 ```
 gulp                    //默认调用 gulp build
+gulp s                  //启动服务与监听
 gulp js                 //压缩 js 文件，并输出到 dist/js/
 gulp css                //压缩 css 文件，并输出到 dist/css/
 gulp images             //复制并压缩图片，并输出到 dist/images/
