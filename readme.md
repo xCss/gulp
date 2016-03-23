@@ -1,9 +1,9 @@
 # Gulp + Browser-sync 自动化工程构建工具
 
-1. 使用 `[browser-sync][1]` 自动刷新页面  
+1. 使用 `[browser-sync](https://github.com/BrowserSync/browser-sync)` 自动刷新页面  
 2. `gulp s` 启动服务并监听src目录
 3. 默认首页是 `src/index.html` ，若要修改，请直接修改变量 `basePath` 
-4. 使用 `[gulp-rev][2]` + `[gulp-rev-collector][3]` 添加版本号  
+4. 使用 `[gulp-rev](https://github.com/sindresorhus/gulp-rev)` + `[gulp-rev-collector](https://github.com/shonny-ua/gulp-rev-collector)` 添加版本号  
 
 -------------------------------  
 
@@ -59,6 +59,4 @@ gulp rev                //添加MD5指纹
 1. [Demo](dist/index.html)  
 2. [Treasure](https://github.com/eary/treasure)  
 
-[1]:https://github.com/BrowserSync/browser-sync 
-[2]:https://github.com/sindresorhus/gulp-rev
-[2]:https://github.com/shonny-ua/gulp-rev-collector
+
