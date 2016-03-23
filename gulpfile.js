@@ -61,16 +61,16 @@ gulp.task('css',function(){
 gulp.task('images',function(){
     return gulp.src(srcPath + '/images/*.*')
         .pipe(cached('images'))
-        .pipe(imagemin({
+        /*.pipe(imagemin({
             optimizationLevel: 3,   // 取值范围：0-7（优化等级）
             progressive: true,      // 是否无损压缩jpg图片
             interlaced: true,       // 是否隔行扫描gif进行渲染
             multipass: true         // 是否多次优化svg直到完全优化
-        }))
-        .pipe(rev())
+        }))*/
+        //.pipe(rev())
         .pipe(gulp.dest(distPath + '/images/'))
-        .pipe(rev.manifest())
-        .pipe(gulp.dest('./rev/images'));
+        //.pipe(rev.manifest())
+        //.pipe(gulp.dest('./rev/images'));
 });
 
 
@@ -112,9 +112,13 @@ gulp.task('s',function(){
     browserSync({
         files:"**",
         server:{
-            baseDir:basePath
+            baseDir:srcPath
         }
     });
+    
+    gulp.watch(srcPath + '/**/*.html',breload);
+    gulp.watch(srcPath + '/**/*.js',breload);
+    gulp.watch(srcPath + '/**/*.css',breload({stream:true}));
 });
 
 //复制字体
