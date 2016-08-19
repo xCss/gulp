@@ -1,123 +1,70 @@
-.vertical
-{
-width:50px;
-height:50px;
-font-size:12px;
-background:red;  
-margin:50px auto;
-position:relative;
-}
-.vertical:hover{
-    animation:vertical .5s 2;
-    -webkit-animation:vertical .5s 2; /*Safari and Chrome*/
-}
-.level{
-width:50px;
-height:50px;
-background:grey;
-margin:0 auto;
-position:relative;
-}
-.level:hover{
-animation:level .5s 2;
--webkit-animation:level .5s 2; /*Safari and Chrome*/}
-/*水平*/
-@keyframes level
-{
-    0% {left:0px;}
-    5%{left:-5px;}
-    10%{left:-10px;}
-    15%{left:-15px;}
-    20%{left:-20px;}
-    25%{left:-25px;}
-    30%{left:-20px;}
-    35%{left:-15px;}
-    40%{left:-10px;}
-    45%{left:-5px;}
-    50%{left:0px;}
-    55%{left:5px;}
-    60%{left:10px;}
-    65%{left:15px;}
-    70%{left:20px;}
-    75%{left:25px;}
-    80%{left:20px;}
-    85%{left:15px;}
-    90%{left:10px;}
-    95%{left:5px;}
-    100% {left:0px;}
+@charset 'utf-8';
+@font-face {
+  font-family: "PingFang SC";
+  src: url("../fonts/PingFang-Regular.eot");
+  src: url("../fonts/PingFang-Regular.eot?#font-spider") format("embedded-opentype"), url('../fonts/PingFang-Regular.woff') format('woff'), url('../fonts/PingFang-Regular.ttf') format('truetype'), url('../fonts/PingFang-Regular.svg') format('svg');
 }
 
-@-webkit-keyframes level /*Safari and Chrome*/
-{
-    0% {left:0px;}
-    5%{left:-5px;}
-    10%{left:-10px;}
-    15%{left:-15px;}
-    20%{left:-20px;}
-    25%{left:-25px;}
-    30%{left:-20px;}
-    35%{left:-15px;}
-    40%{left:-10px;}
-    45%{left:-5px;}
-    50%{left:0px;}
-    55%{left:5px;}
-    60%{left:10px;}
-    65%{left:15px;}
-    70%{left:20px;}
-    75%{left:25px;}
-    80%{left:20px;}
-    85%{left:15px;}
-    90%{left:10px;}
-    95%{left:5px;}
-    100% {left:0px;}
+@font-face {
+  font-family: "PingFang SC Light";
+  src: url("../fonts/PingFang-Light.eot");
+  src: url("../fonts/PingFang-Light.eot?#font-spider") format("embedded-opentype"), url('../fonts/PingFang-Light.woff') format('woff'), url('../fonts/PingFang-Light.ttf') format('truetype'), url('../fonts/PingFang-Light.svg') format('svg');
 }
 
-/*垂直*/
-@keyframes vertical
-{
-    0% {top:0px;}
-    5%{top:-5px;}
-    10%{top:-10px;}
-    15%{top:-15px;}
-    20%{top:-20px;}
-    25%{top:-25px;}
-    30%{top:-20px;}
-    35%{top:-15px;}
-    40%{top:-10px;}
-    45%{top:-5px;}
-    50%{top:0px;}
-    55%{top:5px;}
-    60%{top:10px;}
-    65%{top:15px;}
-    70%{top:20px;}
-    75%{top:25px;}
-    80%{top:20px;}
-    85%{top:15px;}
-    90%{top:10px;}
-    95%{top:5px;}
-    100% {top:0px;}
+@font-face {
+  font-family: "PingFang SC ExtraLight";
+  src: url("../fonts/PingFang-ExtraLight.eot");
+  src: url("../fonts/PingFang-ExtraLight.eot?#font-spider") format("embedded-opentype"), url('../fonts/PingFang-ExtraLight.woff') format('woff'), url('../fonts/PingFang-ExtraLight.ttf') format('truetype'), url('../fonts/PingFang-ExtraLight.svg') format('svg');
 }
-@-webkit-keyframes vertical
-{
-    0% {top:0px;}
-    5%{top:-5px;}
-    10%{top:-10px;}
-    15%{top:-15px;}
-    20%{top:-20px;}
-    25%{top:-25px;}
-    30%{top:-20px;}
-    35%{top:-15px;}
-    40%{top:-10px;}
-    45%{top:-5px;}
-    50%{top:0px;}
-    55%{top:5px;}
-    60%{top:10px;}
-    65%{top:15px;}
-    70%{top:20px;}
-    75%{top:25px;}
-    80%{top:20px;}
-    85%{top:15px;}
-    90%{top:10px;}
-    95%{top:5px;}
-    100% {top:0px;}
+
+@font-face {
+  font-family: "PingFang SC Bold";
+  src: url("../fonts/PingFang-Bold.eot");
+  src: url("../fonts/PingFang-Bold.eot?#font-spider") format("embedded-opentype"), url('../fonts/PingFang-Bold.woff') format('woff'), url('../fonts/PingFang-Bold.ttf') format('truetype'), url('../fonts/PingFang-Bold.svg') format('svg');
 }
+
+@font-face {
+  font-family: "PingFang SC Medium";
+  src: url("../fonts/PingFang-Medium.eot");
+  src: url("../fonts/PingFang-Medium.eot?#font-spider") format("embedded-opentype"), url('../fonts/PingFang-Medium.woff') format('woff'), url('../fonts/PingFang-Medium.ttf') format('truetype'), url('../fonts/PingFang-Medium.svg') format('svg');
+}
+
+@font-face {
+  font-family: "PingFang SC Heavy";
+  src: url("../fonts/PingFang-Heavy.eot");
+  src: url("../fonts/PingFang-Heavy.eot?#font-spider") format("embedded-opentype"), url('../fonts/PingFang-Heavy.woff') format('woff'), url('../fonts/PingFang-Heavy.ttf') format('truetype'), url('../fonts/PingFang-Heavy.svg') format('svg');
+}
+
+* {
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  font-size: 0;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+li {
+  font-size: 1rem;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color:#F4F4F4;
+}
+a{font-size:20pt;text-decoration: none;position: relative;}
+a.btn{color:#fff;padding:10px 15px;background:#75CCBA;display:inline-block;margin:20px 0 20px 20px;border-radius:10px;}
+a.btn i{padding-right:10px;}
+
