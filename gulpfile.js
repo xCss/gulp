@@ -1,11 +1,9 @@
 var gulp = require('gulp'),                         //gulp
     del = require('del'),                           //删除文件
     rev = require('gulp-rev'),                      //更改版本名
-    less = require('gulp-less'),                    //编译less
+    sass = require('gulp-sass'),                    //编译sass
     csso = require('gulp-csso'),                    //css压缩
     clean = require('gulp-clean'),                  //清空文件夹
-    notify = require('gulp-notify'),                //发生异常时提示错误(和plumber同时用)
-    plumber = require('gulp-plumber'),              
     filter = require('gulp-filter'),                //过滤筛选指定文件
     concat = require('gulp-concat'),                //合并文件
     cached = require('gulp-cached'),                //缓存当前任务中的文件，只让已修改的文件通过管道
@@ -60,22 +58,7 @@ gulp.task('js',function(){
 gulp.task('css',function(){
     return gulp.src(srcPath+'/css/*.css')
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest(distPath+'/css'));
-});
-
-gulp.task('less',function(){
-    return gulp.src(srcPath+'/less/*.less')
-        //.pipe(plumber({errorHandler:notify.onError('Error:<%= error.massage %>')}))
-        .pipe(less({compress:true}))
-        .on('error',function(e){console.log(e);})
-        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
-        .pipe(gulp.dest(srcPath+'/css'));
-});
-
-gulp.task('mincss',['less','css'],function(){
-    return gulp.src(srcPath+'/css/*.css')
-        .pipe(concat('all.css'))
-        .pipe(gulp.dest(srcPath+'/css'))
+        .pipe(gulp.dest(distPath+'/css'))
         .pipe(rename({suffix:'.min'}))
         .pipe(csso())
         .pipe(rev())
@@ -84,19 +67,19 @@ gulp.task('mincss',['less','css'],function(){
         .pipe(gulp.dest('./rev/css')); 
 });
 
+gulp.task('scss',function(){
+    return gulp.src(srcPath+'/scss/*.scss')
+        .pipe(sass())
+        .on('error',function(e){console.log(e);})
+        .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
+        .pipe(gulp.dest(srcPath+'/css'))
+        .pipe(breload({stream:true}));
+});
+
 gulp.task('images',function(){
     return gulp.src(srcPath + '/images/*.*')
         .pipe(cached('images'))
-        /*.pipe(imagemin({
-            optimizationLevel: 3,   // 取值范围：0-7（优化等级）
-            progressive: true,      // 是否无损压缩jpg图片
-            interlaced: true,       // 是否隔行扫描gif进行渲染
-            multipass: true         // 是否多次优化svg直到完全优化
-        }))*/
-        //.pipe(rev())
-        .pipe(gulp.dest(distPath + '/images/'))
-        //.pipe(rev.manifest())
-        //.pipe(gulp.dest('./rev/images'));
+        .pipe(gulp.dest(distPath + '/images/'));
 });
 
 
@@ -108,7 +91,7 @@ gulp.task('rev',function(){
         .pipe(gulp.dest(distPath));
 });
 
-gulp.task('build',['less','css','mincss','js','images','copy'],function(){
+gulp.task('build',['clean','css','js','images','copy'],function(){
     gulp.start('rev');
 });
 
@@ -122,7 +105,7 @@ gulp.task('watch',function(){
     gulp.watch(srcPath + '/**/*.html',['rev'],breload);
     gulp.watch(srcPath + '/**/*.js',['js','rev'],breload);
     gulp.watch(srcPath + '/**/*.css',['css','rev'],breload);
-    gulp.watch(srcPath + '/less/*.less',['less','mincss','rev'],breload);
+    //gulp.watch(srcPath + '/less/*.less',['less','mincss','rev'],breload);
     
     browserSync({
         files:'**',
@@ -135,7 +118,7 @@ gulp.task('watch',function(){
 
     
 //单独打开服务
-gulp.task('s',['mincss'],function(){
+gulp.task('s',function(){
     browserSync({
         files:"**",
         server:{
@@ -145,8 +128,7 @@ gulp.task('s',['mincss'],function(){
     
     gulp.watch(srcPath + '/**/*.html',breload);
     gulp.watch(srcPath + '/**/*.js',breload);
-    gulp.watch(srcPath + '/less/*.less',['less']);
-    gulp.watch(srcPath + '/**/*.css',['mincss'],breload({stream:true}));
+    gulp.watch(srcPath + '/scss/*.scss',['scss']);
 });
 
 //复制字体
