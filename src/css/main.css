@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #0C8484; }
+
+body {
+  margin: 0;
+  line-height: 1.5;
+  font-size: .16rem;
+  position: relative;
+  background-color: #FFF;
+  -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "PingFang SC", "Hiragino Sans GB", "Neue Haas Grotesk Text Pro", "Microsoft YaHei", "Microsoft JhengHei", sans-serif; }
+
+.clearfix::before {
+  display: table;
+  content: ""; }
+
+.clearfix::after {
+  display: table;
+  clear: both;
+  content: ""; }
+
+.float-right {
+  float: right !important; }
+
+.float-left {
+  float: left !important; }
+
+.float-none {
+  float: none !important; }
+
+a {
+  text-decoration: none;
+  -webkit-transition: color .15s linear;
+  transition: color .15s linear; }
+
+a:hover {
+  color: #888; }
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle; }
+
+header {
+  padding: .1rem 0;
+  display: block;
+  background: rgba(255, 255, 255, 0.93);
+  overflow: hidden;
+  text-align: center;
+  height: .8rem; }
+  header .logo {
+    display: inline-block;
+    font-size: .3rem; }
+    header .logo i {
+      font-size: .4rem; }
+
+html {
+  font-size: 100px; }
+
+.container {
+  font-size: 0;
+  max-width: 12rem;
+  margin: 0 auto; }
+  .container .item {
+    display: inline-block;
+    width: 33.33%;
+    height: 2.4rem;
+    padding: .1rem;
+    position: relative; }
+    .container .item .card {
+      display: block;
+      height: 100%;
+      background: rgba(1, 1, 1, 0.4);
+      overflow: hidden; }
+
+@media only screen and (min-width: 769px) and (max-width: 980px) {
+  .item {
+    padding: .08rem !important; } }
+
+@media only screen and (max-width: 768px) {
+  html {
+    font-size: 115px; }
+    html .item {
+      padding: .06rem !important;
+      width: 50% !important; } }
+
+@media only screen and (max-width: 640px) {
+  html {
+    font-size: 110px; }
+    html .item {
+      padding: .05rem 0 !important;
+      width: 100% !important; } }
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 100px; } }
+
+@media only screen and (max-width: 320px) {
+  html {
+    font-size: 85px; } }
