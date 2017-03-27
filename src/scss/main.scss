@@ -87,21 +87,114 @@ html {
     .item {
         display: inline-block;
         width: 33.33%;
-        height: 2.4rem;
+        height: auto;
         padding: .1rem;
         position: relative;
+        border:none;
         .card {
             display: block;
             height: 100%;
-            background: rgba(1, 1, 1, .4);
-            overflow: hidden;
+            background: #dedede;
+            position:relative;
+            cursor:zoom-in;
+            img{
+                width:100%;
+                border:0;
+            }
+            .mark{
+                width:100%;
+                height:100%;
+                position:absolute;
+                top:0;
+                left:0;
+                opacity:0;
+                background:linear-gradient(180deg,rgba(0,0,0,.4) 0,transparent 40%,transparent 60%,rgba(0,0,0,.6));
+                filter:blur(15px);
+                z-index: 1px;
+                transition:all .5s ease;
+            }
+            .options{
+                font-size:.12rem;
+                position:absolute;
+                right:.05rem;
+                bottom:.05rem;
+                padding:.05rem;
+                overflow: hidden;
+                display:block;
+                text-align: right;
+                transition: all .5s ease;
+                opacity:0;
+            }
+            .ctrl{
+                display:inline-block;
+                height: .32rem;
+                line-height: .31rem;
+                background-color: hsla(0,0%,100%,.8);
+                border: 1px solid transparent;
+                cursor: pointer;
+                border-radius: .06rem;
+                box-shadow: 0 1px 1px rgba(0,0,0,.04);
+                text-align: center;
+                padding: 0 .1rem;
+                &.heart{
+                    .icon{
+                        color:#f15151 !important;
+                    }
+                }
+                &:hover{
+                    background:#fff;
+                }
+            }
+            .t{
+                margin-left:.05rem;
+                font-style: normal;
+            }
+            .description{
+                position:absolute;
+                width:100%;
+                left:.05rem;
+                top:.05rem;
+                display:block;
+                color:#fff;
+                opacity: 0;
+                transition: all .5s ease;
+                h3{
+                    font-size:.16rem;
+                    letter-spacing: .01rem;
+                    font-weight: 400;
+                    color:#fff;
+                    padding:.02rem;
+                }
+                p{
+                    font-size:.14rem;
+                    .icon{
+                        color:#dedede;
+                    }
+                    .t{
+                        color:#dedede;
+                    }
+                }
+            }
+
+        }
+        &:hover{
+            .mark{
+                opacity:1;
+            }
+            .options{
+                opacity:1;
+            }
+            .description{
+                opacity:1;
+            }
         }
     }
 }
 
-@media only screen and (min-width: 769px) and (max-width:980px) {
+@media only screen and (max-width:980px) {
     .item {
         padding: .08rem !important;
+        width: 50% !important;
     }
 }
 
@@ -110,7 +203,6 @@ html {
         font-size: 115px;
         .item {
             padding: .06rem !important;
-            width: 50% !important;
         }
     }
 }
@@ -120,7 +212,13 @@ html {
         font-size: 110px;
         .item {
             padding: .05rem 0 !important;
+            margin-bottom:.15rem;
             width: 100% !important;
+            .card{
+                .mark,.description,.options{
+                    opacity:1 !important;
+                }
+            }
         }
     }
 }

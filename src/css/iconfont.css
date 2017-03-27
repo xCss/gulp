@@ -11,88 +11,56 @@
 
 .icon {
     font-family: "iconfont" !important;
-    font-size: 16px;
+    font-size: .16rem;
     font-style: normal;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-home:before {
-    content: "\e611";
-}
+.icon-home:before { content: "\e611"; }
 
-.icon-eye:before {
-    content: "\e668";
-}
+.icon-eye:before { content: "\e668"; }
 
-.icon-calendar:before {
-    content: "\e617";
-}
+.icon-calendar:before { content: "\e617"; }
 
-.icon-search:before {
-    content: "\e60f";
-}
+.icon-search:before { content: "\e60f"; }
 
-.icon-plus:before {
-    content: "\e615";
-}
+.icon-plus:before { content: "\e615"; }
 
-.icon-iconxiangzuojiantou:before {
-    content: "\e642";
-}
+.icon-left:before { content: "\e642"; }
 
-.icon-heart:before {
-    content: "\e655";
-}
+.icon-heart:before { content: "\e655"; }
 
-.icon-reflash:before {
-    content: "\e675";
-}
+.icon-reflash:before { content: "\e675"; }
 
-.icon-next:before {
-    content: "\e673";
-}
+.icon-collect:before { content: "\e636"; }
 
-.icon-random:before {
-    content: "\e629";
-}
+.icon-next:before { content: "\e673"; }
 
-.icon-more:before {
-    content: "\e623";
-}
+.icon-random:before { content: "\e629"; }
 
-.icon-remove:before {
-    content: "\e66c";
-}
+.icon-collect-o:before { content: "\e600"; }
 
-.icon-true:before {
-    content: "\e678";
-}
+.icon-more:before { content: "\e623"; }
 
-.icon-menu:before {
-    content: "\e650";
-}
+.icon-remove:before { content: "\e66c"; }
 
-.icon-download:before {
-    content: "\e651";
-}
+.icon-true:before { content: "\e678"; }
 
-.icon-about:before {
-    content: "\e66f";
-}
+.icon-menu:before { content: "\e650"; }
 
-.icon-location:before {
-    content: "\e662";
-}
+.icon-download:before { content: "\e651"; }
 
-.icon-prev:before {
-    content: "\e60b";
-}
+.icon-heart-plus:before { content: "\e658"; }
 
-.icon-top:before {
-    content: "\e612";
-}
+.icon-about:before { content: "\e66f"; }
 
-.icon-bing:before {
-    content: "\e70c";
-}
+.icon-location:before { content: "\e662"; }
+
+.icon-prev:before { content: "\e60b"; }
+
+.icon-top:before { content: "\e612"; }
+
+.icon-bing:before { content: "\e70c"; }
+
+.icon-heart-o:before { content: "\e637"; }
