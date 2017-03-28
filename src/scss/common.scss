@@ -1,0 +1,273 @@
+@charset 'utf-8';
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    line-height: 1.5;
+    font-size: .16rem;
+    position: relative;
+    background-color: #FFF;
+    text-size-adjust: 100%;
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+    color: #0C8484;
+    font-family: "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "PingFang SC", "Hiragino Sans GB", "Neue Haas Grotesk Text Pro", "Microsoft YaHei", "Microsoft JhengHei", sans-serif;
+}
+
+.clearfix::before {
+    display: table;
+    content: ""
+}
+
+.clearfix::after {
+    display: table;
+    clear: both;
+    content: ""
+}
+
+.float-right {
+    float: right !important
+}
+
+.float-left {
+    float: left !important
+}
+
+.float-none {
+    float: none !important
+}
+
+a {
+    text-decoration: none;
+    -webkit-transition: color .15s linear;
+    transition: color .15s linear;
+}
+
+a:hover {
+    color: #888;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+header {
+    padding: .1rem 0;
+    display: block;
+    background: rgba(255, 255, 255, .93);
+    height: .7rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    .container {
+        padding: 0 .5rem;
+    }
+    .logo {
+        display: inline-block;
+        height: 100%;
+        font-size: .3rem;
+        color: #0C8484;
+        i {
+            font-size: .4rem;
+        }
+    }
+    .menu-btn {
+        display: inline-block;
+        height: .34rem;
+        background-color: hsla(0, 0%, 100%, .8);
+        border: 1px solid #ccc;
+        cursor: pointer;
+        border-radius: .06rem;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+        text-align: center;
+        padding: .05rem .1rem;
+        position: absolute;
+        right: .1rem;
+        top: .15rem;
+        display: none;
+        z-index: 2;
+        .icon {
+            font-size: .18rem;
+        }
+    }
+    nav {
+        float: right;
+        .menu {
+            height: .6rem;
+            display: block;
+            transition: all .3s ease;
+            li {
+                font-size: .14rem;
+                display: inline-block;
+                height: 100%;
+                vertical-align: middle;
+                overflow: hidden;
+                &.active {
+                    a {
+                        color: #f15151;
+                    }
+                }
+                a {
+                    display: block;
+                    height: 100%;
+                    padding: 0 .25rem;
+                    text-align: center;
+                    line-height: .55rem;
+                    .icon {
+                        font-size: .25rem;
+                        display: none;
+                    }
+                }
+                .search {
+                    height: 100%;
+                    position: relative;
+                    display: block;
+                    input {
+                        font-size: .12rem;
+                        border: 1px solid #dedede;
+                        border-radius: 5px;
+                        height: .4rem;
+                        margin: .1rem 0;
+                        padding: 0 .1rem;
+                        outline: none;
+                        width: 1.68rem;
+                        transition: all .2s ease;
+                    }
+                    input:focus {
+                        margin-left: 0;
+                        opacity: 1;
+                        border: 1px solid #a7afef;
+                        &+.search-btn {
+                            .icon {
+                                color: #a7afef;
+                            }
+                        }
+                    }
+                    .search-btn {
+                        border: none;
+                        position: absolute;
+                        right: .05rem;
+                        top: -0.04rem;
+                        padding: .05rem;
+                        background: transparent;
+                        outline: none;
+                        cursor: pointer;
+                        .icon {
+                            display: block;
+                            color: #dedede;
+                            transition: all .2s ease;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.holder {
+    height: .9rem;
+}
+
+.mask {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+    display: none;
+}
+
+html {
+    font-size: 100px;
+    .over {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    html {
+        font-size: 115px;
+        .menu-btn {
+            display: inline-block;
+        }
+        header {
+            text-align: center;
+            .container {
+                padding: 0 !important;
+            }
+        }
+        nav {
+            float: none;
+            .menu {
+                display: none !important;
+            }
+            .menu.active {
+                display: block !important;
+                li {
+                    background: rgba(255, 255, 255, .9);
+                    .text {
+                        display: none;
+                    }
+                    .icon {
+                        display: inline-block !important;
+                    }
+                    width: 33.33%;
+                    &.search-wrap {
+                        width: 100%;
+                        padding: 0 .1rem;
+                        input {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+        .item {
+            padding: .06rem !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    html {
+        font-size: 110px;
+        .item {
+            padding: .05rem 0 !important;
+            margin-bottom: .15rem;
+            width: 100% !important;
+            .card {
+                .mark,
+                .description,
+                .options {
+                    opacity: 1 !important;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 100px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    html {
+        font-size: 85px;
+    }
+}

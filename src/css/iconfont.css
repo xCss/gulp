@@ -17,50 +17,110 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-home:before { content: "\e611"; }
+.icon-eye:before {
+    content: "\e668";
+}
 
-.icon-eye:before { content: "\e668"; }
+.icon-home:before {
+    content: "\e6b8";
+}
 
-.icon-calendar:before { content: "\e617"; }
+.icon-calendar:before {
+    content: "\e617";
+}
 
-.icon-search:before { content: "\e60f"; }
+.icon-search:before {
+    content: "\e60f";
+}
 
-.icon-plus:before { content: "\e615"; }
+.icon-plus:before {
+    content: "\e615";
+}
 
-.icon-left:before { content: "\e642"; }
+.icon-left:before {
+    content: "\e642";
+}
 
-.icon-heart:before { content: "\e655"; }
+.icon-heart:before {
+    content: "\e655";
+}
 
-.icon-reflash:before { content: "\e675"; }
+.icon-reflash:before {
+    content: "\e675";
+}
 
-.icon-collect:before { content: "\e636"; }
+.icon-collect:before {
+    content: "\e636";
+}
 
-.icon-next:before { content: "\e673"; }
+.icon-next:before {
+    content: "\e673";
+}
 
-.icon-random:before { content: "\e629"; }
+.icon-random:before {
+    content: "\e629";
+}
 
-.icon-collect-o:before { content: "\e600"; }
+.icon-collect-o:before {
+    content: "\e600";
+}
 
-.icon-more:before { content: "\e623"; }
+.icon-more:before {
+    content: "\e623";
+}
 
-.icon-remove:before { content: "\e66c"; }
+.icon-remove:before {
+    content: "\e66c";
+}
 
-.icon-true:before { content: "\e678"; }
+.icon-true:before {
+    content: "\e678";
+}
 
-.icon-menu:before { content: "\e650"; }
+.icon-menu:before {
+    content: "\e650";
+}
 
-.icon-download:before { content: "\e651"; }
+.icon-download:before {
+    content: "\e651";
+}
 
-.icon-heart-plus:before { content: "\e658"; }
+.icon-heart-plus:before {
+    content: "\e658";
+}
 
-.icon-about:before { content: "\e66f"; }
+.icon-paixingbang:before {
+    content: "\e626";
+}
 
-.icon-location:before { content: "\e662"; }
+.icon-about:before {
+    content: "\e66f";
+}
 
-.icon-prev:before { content: "\e60b"; }
+.icon-location:before {
+    content: "\e662";
+}
 
-.icon-top:before { content: "\e612"; }
+.icon-hot:before {
+    content: "\e609";
+}
 
-.icon-bing:before { content: "\e70c"; }
+.icon-prev:before {
+    content: "\e60b";
+}
 
-.icon-heart-o:before { content: "\e637"; }
+.icon-top:before {
+    content: "\e612";
+}
+
+.icon-ranking:before {
+    content: "\e60c";
+}
+
+.icon-bing:before {
+    content: "\e70c";
+}
+
+.icon-heart-o:before {
+    content: "\e637";
+}

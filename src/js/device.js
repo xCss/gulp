@@ -15,7 +15,7 @@
 //DEVICE.isPc               @return:Boolean	是否是：pc
 //DEVICE.isMac              @return:Boolean	是否是：mac
 //DEVICE.isLinux            @return:Boolean	是否是：linux
-//DEVICE.isPhone            @return:Boolean	是否是：移动设备，非pc
+//DEVICE.isMobile           @return:Boolean	是否是：移动设备，非pc
 
 //DEVICE.ver                @return:Number   浏览器版本或  ipad/iphone/android系统版本
 //---------------------------------------------------------
@@ -61,7 +61,7 @@
     _ver = _ver.join(".");
     DEVICE.ver = _ver;
 
-    DEVICE.isPhone = (DEVICE.isAndroid || DEVICE.isIpad || DEVICE.isIphone);
+    DEVICE.isMobile = (DEVICE.isAndroid || DEVICE.isIpad || DEVICE.isIphone);
 
     var p = navigator.platform;
     var win = p.indexOf("Win") == 0;
@@ -69,7 +69,7 @@
     var x11 = (p == "X11") || (p.indexOf("Linux") == 0);
 
     DEVICE.isPc = (win || mac || x11);
-    DEVICE.isPhone = !DEVICE.isPc;
+    DEVICE.isMobile = !(win || mac || x11);
     DEVICE.isMac = mac;
     DEVICE.isWin = win;
     DEVICE.isLinux = x11;
