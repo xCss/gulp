@@ -45,6 +45,7 @@ a {
     text-decoration: none;
     -webkit-transition: color .15s linear;
     transition: color .15s linear;
+    color: #0C8484;
 }
 
 a:hover {
@@ -256,6 +257,9 @@ html {
                     opacity: 1 !important;
                 }
             }
+        }
+        .sub{
+            display:none;
         }
     }
 }

@@ -123,3 +123,95 @@
         width: 50% !important;
     }
 }
+
+
+/**********************Detail.css***********************/
+.detail{
+    height: 100vh;
+    position:relative;
+    .mark{
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        z-index:-1;
+        background-size:cover;
+        background-position:center;
+        transition:all 1.5s ease;
+        filter:blur(30px);
+    }
+    .preview{
+        img {
+            width: 0;
+            height:0;
+            position:absolute;
+            border: 0;
+        }
+        .options {
+            font-size: .12rem;
+            padding: .1rem;
+            width:100%;
+            display: block;
+            text-align: right;
+            transition: all .5s ease;
+        }
+        .ctrl {
+            display: inline-block;
+            height: .32rem;
+            line-height: .31rem;
+            background-color: hsla(0, 0%, 100%, .8);
+            border: 1px solid transparent;
+            cursor: pointer;
+            border-radius: .06rem;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+            text-align: center;
+            padding: 0 .1rem;
+            &.heart {
+                .icon {
+                    color: #f15151 !important;
+                }
+            }
+            &.left{
+                left:.15rem;
+                top:.1rem;
+                position:absolute;
+            }
+            &:hover {
+                background: #fff;
+            }
+            .t{
+                font-style:normal;
+                margin-left:.05rem;
+                display:inline-block;
+                vertical-align: top;
+            }
+        }
+        .description{
+            position:absolute;
+            left:0;
+            bottom:0;
+            padding:.1rem;
+            display:block;
+            width:100%;
+            color:#fff;
+            background:rgba(1,1,1,.5);
+            .title{
+                font-size:.2rem;
+            }
+            .sub{
+                color:#c6cccc;
+            }
+            .t{
+                font-style:normal;
+                margin-left:.05rem;
+                display:inline-block;
+                vertical-align: top;
+            }
+            .show+.show{
+                margin-left:.3rem;
+            }
+        }
+                    
+    }
+}

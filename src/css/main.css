@@ -104,3 +104,80 @@
   .item {
     padding: .08rem !important;
     width: 50% !important; } }
+
+/**********************Detail.css***********************/
+.detail {
+  height: 100vh;
+  position: relative; }
+  .detail .mark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    -webkit-transition: all 1.5s ease;
+    transition: all 1.5s ease;
+    -webkit-filter: blur(30px);
+            filter: blur(30px); }
+  .detail .preview img {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border: 0; }
+  .detail .preview .options {
+    font-size: .12rem;
+    padding: .1rem;
+    width: 100%;
+    display: block;
+    text-align: right;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease; }
+  .detail .preview .ctrl {
+    display: inline-block;
+    height: .32rem;
+    line-height: .31rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid transparent;
+    cursor: pointer;
+    -webkit-border-radius: .06rem;
+            border-radius: .06rem;
+    -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    text-align: center;
+    padding: 0 .1rem; }
+    .detail .preview .ctrl.heart .icon {
+      color: #f15151 !important; }
+    .detail .preview .ctrl.left {
+      left: .15rem;
+      top: .1rem;
+      position: absolute; }
+    .detail .preview .ctrl:hover {
+      background: #fff; }
+    .detail .preview .ctrl .t {
+      font-style: normal;
+      margin-left: .05rem;
+      display: inline-block;
+      vertical-align: top; }
+  .detail .preview .description {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: .1rem;
+    display: block;
+    width: 100%;
+    color: #fff;
+    background: rgba(1, 1, 1, 0.5); }
+    .detail .preview .description .title {
+      font-size: .2rem; }
+    .detail .preview .description .sub {
+      color: #c6cccc; }
+    .detail .preview .description .t {
+      font-style: normal;
+      margin-left: .05rem;
+      display: inline-block;
+      vertical-align: top; }
+    .detail .preview .description .show + .show {
+      margin-left: .3rem; }

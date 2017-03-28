@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>详情</title>
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/iconfont.css">
+</head>
+<body class="detail">
+    <div class="preview">
+        <img class="target" src="https://static.ioliu.cn/bing/CommonRosefinch_ZH-CN10986839201_1920x1080.jpg?imageView2/1/w/19/h/11/q/100" alt="" class="progressive__img progressive--not-loaded" data-src="https://static.ioliu.cn/bing/CommonRosefinch_ZH-CN10986839201_1920x1080.jpg">
+        <div class="mark"></div>
+        <div class="options">
+            <span class="ctrl left"><i class="icon icon-left"></i><em class="t">BACK</em></span>
+            <span class="ctrl heart"><i class="icon icon-heart"></i><em class="t">0</em></span>
+            <span class="ctrl plus"><i class="icon icon-plus"></i></span>
+            <span class="ctrl download"><i class="icon icon-download"></i></span>
+        </div>
+        <div class="description">
+            <p class="title"> 一只常见的雄性朱雀 (© Arterra Picture Library/Alamy)</p>
+            <p class="sub">普通的朱雀很常见，它分布广泛，大多在西欧和亚洲。如果你看到颜色艳丽的羽毛，那么不用怀疑，这就是雄性朱雀。它具有鲜艳的红色帽子，面部和胸部也是艳丽的大红色。在英国东部有很少见到的玫瑰金色的朱雀，普通的朱雀则出现在西海岸。如果你也喜欢艳丽的鸟儿，不妨让我们一起走进朱雀的世界！</p>
+            <p class="calendar"><i class="icon icon-calendar"></i> <em class="t">2016-01-10</em></p>
+            <p class="location"><i class="icon icon-location"></i> <em class="t">英国, 康威小镇</em></p>
+            <p>
+                <span class="show"><i class="icon icon-heart"></i> <em class="t">0</em></span>
+                <span class="show"><i class="icon icon-eye"></i> <em class="t">0</em></span>
+                <span class="show"><i class="icon icon-download"></i> <em class="t">0</em></span>
+            </p>
+        </div>
+    </div>
+    <div class="mark"></div>
+    <script src='./js/jquery-1.12.4.min.js'></script>
+    <script src='./js/device.js'></script>
+    <script>
+        $(function(){
+            var img = $('.target');
+            var mini = img.attr('src');
+            var big = img.attr('data-src');
+            var mark = $('.mark');
+            mark.css({'background-image':`url(${mini})`});
+            img = img[0];
+            img.src = big;
+            img.onload = function(){
+                mark.css({backgroundImage:`url(${big})`,filter:'blur(0)'});
+                img.remove();
+            }
+        })
+    </script>
+</body>
+</html>
