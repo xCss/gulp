@@ -5,33 +5,39 @@
  *
  * Copyright (C) 2016-17 Ashish
  */
-
 .progressive {
   overflow: hidden;
   position: relative;
-  background: #efefef;
-}
+  background: #efefef; }
 
 .progressive__img {
   width: 100%;
   height: 100%;
-  transform: translateZ(0);
-}
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0); }
 
 .progressive--not-loaded {
-  filter: blur(30px);
-}
+  -webkit-filter: blur(30px);
+          filter: blur(30px); }
 
 .progressive--is-loaded {
-  filter: blur(20px);
-  animation: sharpen 0.5s both;
-}
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+  -webkit-animation: sharpen 0.5s both;
+          animation: sharpen 0.5s both; }
+
+@-webkit-keyframes sharpen {
+  from {
+    -webkit-filter: blur(20px);
+            filter: blur(20px); }
+  to {
+    -webkit-filter: blur(0px);
+            filter: blur(0px); } }
 
 @keyframes sharpen {
   from {
-    filter: blur(20px);
-  }
+    -webkit-filter: blur(20px);
+            filter: blur(20px); }
   to {
-    filter: blur(0px);
-  }
-}
+    -webkit-filter: blur(0px);
+            filter: blur(0px); } }

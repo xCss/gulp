@@ -64,9 +64,9 @@
     DEVICE.isMobile = (DEVICE.isAndroid || DEVICE.isIpad || DEVICE.isIphone);
 
     var p = navigator.platform;
-    var win = p.indexOf("Win") == 0;
-    var mac = p.indexOf("Mac") == 0;
-    var x11 = (p == "X11") || (p.indexOf("Linux") == 0);
+    var win = p.indexOf("Win") === 0;
+    var mac = p.indexOf("Mac") === 0;
+    var x11 = (p == "X11") || (p.indexOf("Linux") === 0);
 
     DEVICE.isPc = (win || mac || x11);
     DEVICE.isMobile = !(win || mac || x11);

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>详情</title>
@@ -9,10 +10,11 @@
     <meta content="telephone=no,email=no" name="format-detection">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,Chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
-    <link rel="stylesheet" type="text/css" href="./css/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/iconfont.min.css">
 </head>
+
 <body class="detail">
     <div class="preview">
         <img class="target" src="https://static.ioliu.cn/bing/CommonRosefinch_ZH-CN10986839201_1920x1080.jpg?imageView2/1/w/19/h/11/q/100" alt="" class="progressive__img progressive--not-loaded" data-src="https://static.ioliu.cn/bing/CommonRosefinch_ZH-CN10986839201_1920x1080.jpg">
@@ -39,19 +41,25 @@
     <script src='./js/jquery-1.12.4.min.js'></script>
     <script src='./js/device.js'></script>
     <script>
-        $(function(){
+        $(function() {
             var img = $('.target');
             var mini = img.attr('src');
             var big = img.attr('data-src');
             var mark = $('.mark');
-            mark.css({'background-image':`url(${mini})`});
+            mark.css({
+                'background-image': `url(${mini})`
+            });
             img = img[0];
             img.src = big;
-            img.onload = function(){
-                mark.css({backgroundImage:`url(${big})`,filter:'blur(0)'});
+            img.onload = function() {
+                mark.css({
+                    backgroundImage: `url(${big})`,
+                    filter: 'blur(0)'
+                });
                 img.remove();
             }
         })
     </script>
 </body>
+
 </html>
